@@ -6,25 +6,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorites-->
-        <scene sceneID="jSZ-Rl-tGX">
-            <objects>
-                <viewController title="Favorites" id="qEd-L0-oGQ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nmA-Ex-csI"/>
-                        <viewControllerLayoutGuide type="bottom" id="yla-uq-TFu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ILR-yo-QsJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ikO-a9-4iO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r0Y-In-R69" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="383" y="-197"/>
-        </scene>
         <!--About-->
         <scene sceneID="D4u-fC-QiW">
             <objects>
@@ -38,16 +19,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bYh-wm-O8l"/>
+                    <navigationItem key="navigationItem" title="About Us" id="XCB-nA-ycU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xj-Ma-Kpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="573"/>
+            <point key="canvasLocation" x="326" y="573"/>
         </scene>
-        <!--Explore-->
+        <!--Directions-->
+        <scene sceneID="FO4-ag-hsg">
+            <objects>
+                <viewController title="Directions" id="4TA-ZG-s12" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OyM-Bs-PVr"/>
+                        <viewControllerLayoutGuide type="bottom" id="xZD-Lp-m8c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ro8-ZV-wbe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Directions" id="HUl-fQ-sb6">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="QIS-mH-PG6"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOW-dF-pni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="573"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="ebr-3t-kCY">
             <objects>
-                <viewController title="Explore" id="2o7-id-g5X" customClass="SearchViewController" customModule="Animal_Shelter_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search" id="2o7-id-g5X" customClass="SearchViewController" customModule="Animal_Shelter_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FYq-62-guG"/>
                         <viewControllerLayoutGuide type="bottom" id="j9p-Cx-j28"/>
@@ -153,11 +155,90 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="W3J-xZ-VXO"/>
+                    <navigationItem key="navigationItem" title="Search for a Pet" id="55V-Ut-U7B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tz1-fq-z8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325.60000000000002" y="-1059.2203898050975"/>
+        </scene>
+        <!--Search Results-->
+        <scene sceneID="c60-d1-eKT">
+            <objects>
+                <tableViewController title="Search Results" id="Kh4-6B-GUG" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IHR-Is-V69">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CvS-UE-0Ca">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CvS-UE-0Ca" id="qVV-t9-Zcs">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kh4-6B-GUG" id="hzt-Zm-Opc"/>
+                            <outlet property="delegate" destination="Kh4-6B-GUG" id="OVV-IH-rXZ"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Search Results" id="WOe-ov-C30">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Tes-X1-T4y" userLabel="Back"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dx9-wT-86B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="-1059"/>
+        </scene>
+        <!--Pet Profile-->
+        <scene sceneID="0D4-Rh-PWN">
+            <objects>
+                <viewController title="Pet Profile" id="NcI-gI-yX3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GKK-hQ-3Zh"/>
+                        <viewControllerLayoutGuide type="bottom" id="O8p-z1-U0t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lxq-ve-mwO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Pet Name" id="7eP-D5-eA5">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="OZI-JE-IF8"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6D-iU-QWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353" y="-1059"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="zct-R3-VW0">
+            <objects>
+                <viewController title="Message" id="LMz-x3-dKe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EQi-hq-Noj"/>
+                        <viewControllerLayoutGuide type="bottom" id="aw3-18-aSn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXt-NG-QOt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Send a Message" id="Mnv-K9-epV">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ULW-tU-M8G"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVM-td-CEP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3302" y="-1059"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SSV-So-LrN">
@@ -209,12 +290,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qEd-L0-oGQ" kind="relationship" relationship="rootViewController" id="mR8-kv-VPC"/>
+                        <segue destination="ZtW-ZB-Nlc" kind="relationship" relationship="rootViewController" id="W3z-Iy-AS2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TyV-Th-ptQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-604" y="-197"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="C7k-5L-rcT">
+            <objects>
+                <tableViewController id="ZtW-ZB-Nlc" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MPj-0O-DLr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GtG-AM-YsW">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtG-AM-YsW" id="q1f-7S-N9D">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZtW-ZB-Nlc" id="Hfm-MP-ksc"/>
+                            <outlet property="delegate" destination="ZtW-ZB-Nlc" id="ieL-o7-jC6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorites" id="dLe-Vu-7vF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fp7-e0-E3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="-197"/>
         </scene>
         <!--About-->
         <scene sceneID="9vY-0W-zrO">
