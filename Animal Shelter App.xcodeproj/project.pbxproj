@@ -14,6 +14,7 @@
 		E92B8D241DC7FB3600EC117B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92B8D231DC7FB3600EC117B /* Assets.xcassets */; };
 		E92B8D271DC7FB3600EC117B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92B8D251DC7FB3600EC117B /* LaunchScreen.storyboard */; };
 		E92B8D321DC7FB3600EC117B /* Animal_Shelter_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D311DC7FB3600EC117B /* Animal_Shelter_AppTests.swift */; };
+		E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D3C1DC835B300EC117B /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E92B8D2D1DC7FB3600EC117B /* Animal Shelter AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Animal Shelter AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92B8D311DC7FB3600EC117B /* Animal_Shelter_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal_Shelter_AppTests.swift; sourceTree = "<group>"; };
 		E92B8D331DC7FB3600EC117B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E92B8D3C1DC835B300EC117B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				E92B8D251DC7FB3600EC117B /* LaunchScreen.storyboard */,
 				E92B8D281DC7FB3600EC117B /* Info.plist */,
 				E92B8D201DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld */,
+				E92B8D3C1DC835B300EC117B /* SearchViewController.swift */,
 			);
 			path = "Animal Shelter App";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				E92B8D1C1DC7FB3600EC117B /* ViewController.swift in Sources */,
 				E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */,
+				E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */,
 				E92B8D221DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
