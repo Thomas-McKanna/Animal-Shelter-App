@@ -147,15 +147,20 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Kh4-6B-GUG" kind="show" id="Bdw-AI-7x3"/>
+                                </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F6q-OC-uya">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F6q-OC-uya">
                                 <frame key="frameInset" minX="173" minY="290" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search for a Pet" id="55V-Ut-U7B"/>
+                    <navigationItem key="navigationItem" title="Find a Pet" id="55V-Ut-U7B">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Ccf-nu-YUs"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tz1-fq-z8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CvS-UE-0Ca" id="qVV-t9-Zcs">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -185,9 +190,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Search Results" id="WOe-ov-C30">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="Tes-X1-T4y" userLabel="Back"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search Results" id="WOe-ov-C30"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dx9-wT-86B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,9 +211,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Pet Name" id="7eP-D5-eA5">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="OZI-JE-IF8"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Pet Name" id="7eP-D5-eA5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6D-iU-QWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtG-AM-YsW" id="q1f-7S-N9D">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
