@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, SearchPickTableViewControllerDelegate {
     
     // Properties
     @IBOutlet weak var dogCatEitherLabel: UILabel!
@@ -19,6 +19,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var specialNeedsLabel: UILabel!
     @IBOutlet weak var DogCatEitherSgmtCtrl: UISegmentedControl!
     @IBOutlet weak var breedTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
+    @IBOutlet weak var colorTextField: UITextField!
     @IBOutlet weak var maleFemaleEitherSgmtCtrl: UISegmentedControl!
     @IBOutlet weak var specialNeedsSwitch: UITextField!
     
@@ -26,6 +28,55 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "breed" {
+            let vc = segue.destination as! SearchPickTableViewController
+            // if Dog is selected
+            if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+                vc.listOfThings = DOG_BREEDS
+                vc.title = "Select Breed"
+                vc.delegateIdentifier = "breed"
+                vc.delegate = self
+            }
+            // if Cat is selected
+            else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+                vc.listOfThings = CAT_BREEDS
+                vc.delegateIdentifier = "breed"
+                vc.delegate = self
+            }
+        }
+        
+        if segue.identifier == "age" {
+            let vc = segue.destination as! SearchPickTableViewController
+            vc.listOfThings = AGES
+            vc.delegateIdentifier = "age"
+            vc.delegate = self
+        }
+        
+        if segue.identifier == "color" {
+            let vc = segue.destination as! SearchPickTableViewController
+            vc.listOfThings = COLORS
+            vc.delegateIdentifier = "color"
+            vc.delegate = self
+        }
+    }
+    
+    func finishedPicking(controller: SearchPickTableViewController, text: String, id: String) {
+        if id == "breed" {
+            breedTextField.text = text
+        }
+        
+        if id == "age" {
+           ageTextField.text = text
+        }
+        
+        if id == "color" {
+            colorTextField.text = text
+        }
+        
+        controller.navigationController?.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,6 +88,15 @@ class SearchViewController: UIViewController {
     @IBAction func searchButton(_ sender: UIButton) {
         // encapsulate the user's choice into an object
         // send that object to the Search Results view, where its information will be used to query the database of available pets
+    }
+    @IBAction func breedSegue(_ sender: UITextField) {
+        performSegue(withIdentifier: "breed", sender: self)
+    }
+    @IBAction func ageSegue(_ sender: UITextField) {
+        performSegue(withIdentifier: "age", sender: self)
+    }
+    @IBAction func colorSegue(_ sender: UITextField) {
+        performSegue(withIdentifier: "color", sender: self)
     }
     
 }

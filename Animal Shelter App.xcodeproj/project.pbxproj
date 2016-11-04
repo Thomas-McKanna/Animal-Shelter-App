@@ -16,6 +16,9 @@
 		E92B8D321DC7FB3600EC117B /* Animal_Shelter_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D311DC7FB3600EC117B /* Animal_Shelter_AppTests.swift */; };
 		E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D3C1DC835B300EC117B /* SearchViewController.swift */; };
 		E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */; };
+		E9AF39501DCD284400745D0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394F1DCD284400745D0C /* Constants.swift */; };
+		E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */; };
+		E9AF39561DCD301D00745D0C /* searchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		E92B8D331DC7FB3600EC117B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92B8D3C1DC835B300EC117B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
+		E9AF394F1DCD284400745D0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPickTableViewController.swift; path = ../SearchPickTableViewController.swift; sourceTree = "<group>"; };
+		E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +89,12 @@
 		E92B8D181DC7FB3600EC117B /* Animal Shelter App */ = {
 			isa = PBXGroup;
 			children = (
+				E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */,
 				E92B8D191DC7FB3600EC117B /* AppDelegate.swift */,
 				E92B8D1B1DC7FB3600EC117B /* ViewController.swift */,
 				E92B8D1D1DC7FB3600EC117B /* Main.storyboard */,
+				E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */,
+				E9AF394F1DCD284400745D0C /* Constants.swift */,
 				E92B8D231DC7FB3600EC117B /* Assets.xcassets */,
 				E92B8D251DC7FB3600EC117B /* LaunchScreen.storyboard */,
 				E92B8D281DC7FB3600EC117B /* Info.plist */,
@@ -208,11 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AF39561DCD301D00745D0C /* searchItemTableViewCell.swift in Sources */,
 				E92B8D1C1DC7FB3600EC117B /* ViewController.swift in Sources */,
+				E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */,
 				E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */,
 				E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */,
 				E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */,
 				E92B8D221DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld in Sources */,
+				E9AF39501DCD284400745D0C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
