@@ -72,7 +72,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A05-lu-Ltt">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="A05-lu-Ltt">
                                 <frame key="frameInset" minX="160" minY="90" width="199" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -95,7 +95,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bIq-PI-m3i">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="bIq-PI-m3i">
                                 <frame key="frameInset" minX="160" minY="184" width="199" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
@@ -148,6 +148,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchButton:" destination="2o7-id-g5X" eventType="touchUpInside" id="C1d-Rz-yR6"/>
                                     <segue destination="Kh4-6B-GUG" kind="show" id="Bdw-AI-7x3"/>
                                 </connections>
                             </button>
@@ -161,6 +162,17 @@
                     <navigationItem key="navigationItem" title="Find a Pet" id="55V-Ut-U7B">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Ccf-nu-YUs"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="DogCatEitherSgmtCtrl" destination="A05-lu-Ltt" id="h1P-JT-A8O"/>
+                        <outlet property="breedLabel" destination="SKp-SY-Kjc" id="dMZ-oX-Uaj"/>
+                        <outlet property="breedTextField" destination="ZpI-b3-XxT" id="QSX-8V-icR"/>
+                        <outlet property="dogCatEitherLabel" destination="09u-FV-gN2" id="1ne-8u-Zbh"/>
+                        <outlet property="maleFemaleEitherLabel" destination="tA7-Cf-9ks" id="mZ5-hV-F4a"/>
+                        <outlet property="maleFemaleEitherSgmtCtrl" destination="bIq-PI-m3i" id="RFY-fO-Wbn"/>
+                        <outlet property="maxAgeLabel" destination="fDg-9l-KoM" id="nE3-OH-T5t"/>
+                        <outlet property="specialNeedsLabel" destination="MIS-Ri-tKo" id="V19-Ne-VF5"/>
+                        <outlet property="specialNeedsSwitch" destination="OkW-Jk-zfQ" id="QdS-we-owh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tz1-fq-z8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
