@@ -10,7 +10,7 @@
 let COLORS = ["Any Color", "Black", "Brown", "White", "Golden", "Mixed"]
 
 // TODO: make complete list (http://cattime.com/cat-breeds)
-let CAT_BREEDS = ["Any Breed", "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Wirehair", "Balinese", "Bengal Cats", "Birman", "Bombay", "British Shorthair", "Burmese", "Burmilla"]
+let CAT_BREEDS = ["Any Breed", "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Wirehair", "Balinese", "Bengal Cats", "Birman", "Bombay", "British Shorthair", "Burmese", "Burmilla", "Chartreux"]
 
 // TODO: make complete list (http://www.akc.org/news/the-most-popular-dog-breeds-in-america/)
 let DOG_BREEDS = ["Any Breed", "Retriever (Labrador)", "German Sheperd", "Retriever (Golden)", "Bulldog", "Beagle", "French Bulldog", "Yorkshire Terrier"]
