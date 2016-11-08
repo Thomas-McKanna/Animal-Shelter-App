@@ -19,6 +19,7 @@
 		E9AF39501DCD284400745D0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394F1DCD284400745D0C /* Constants.swift */; };
 		E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */; };
 		E9AF39561DCD301D00745D0C /* searchItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */; };
+		E9AF39581DD160D500745D0C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39571DD160D500745D0C /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E9AF394F1DCD284400745D0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPickTableViewController.swift; path = ../SearchPickTableViewController.swift; sourceTree = "<group>"; };
 		E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchItemTableViewCell.swift; sourceTree = "<group>"; };
+		E9AF39571DD160D500745D0C /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				E92B8D201DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld */,
 				E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */,
 				E92B8D3C1DC835B300EC117B /* SearchViewController.swift */,
+				E9AF39571DD160D500745D0C /* AboutUsViewController.swift */,
 			);
 			path = "Animal Shelter App";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9AF39561DCD301D00745D0C /* searchItemTableViewCell.swift in Sources */,
+				E9AF39581DD160D500745D0C /* AboutUsViewController.swift in Sources */,
 				E92B8D1C1DC7FB3600EC117B /* ViewController.swift in Sources */,
 				E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */,
 				E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */,
