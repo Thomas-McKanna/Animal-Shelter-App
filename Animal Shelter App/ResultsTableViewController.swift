@@ -20,6 +20,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
 
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
+        listTableView.rowHeight = 90
         
         let homeModel = HomeModel()
         homeModel.delegate = self
@@ -32,6 +33,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    // sex is stored as a single character in the database; this function simply maps that character to a full string
     func determine(gender: String) -> String {
         if gender == "M" {
             return "Male"
@@ -44,6 +46,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         }
     }
     
+    // this function must be implemented as part of the HomeModelProtocol
     func itemsDownloaded(items: NSArray) {
         feedItems = items
         self.listTableView.reloadData()
@@ -73,6 +76,8 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         cell.lblName.text = item.name
         cell.lblSex.text = determine(gender: item.sex!)
         cell.lblBreed.text = item.breed
+        // TODO: picture needs to be added somehow
+        
         
         return cell
     }
