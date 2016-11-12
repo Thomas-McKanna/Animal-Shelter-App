@@ -15,6 +15,9 @@
 		E92B8D271DC7FB3600EC117B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92B8D251DC7FB3600EC117B /* LaunchScreen.storyboard */; };
 		E92B8D321DC7FB3600EC117B /* Animal_Shelter_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D311DC7FB3600EC117B /* Animal_Shelter_AppTests.swift */; };
 		E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D3C1DC835B300EC117B /* SearchViewController.swift */; };
+		E94B592C1DD79CAF0016A71C /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B592B1DD79CAF0016A71C /* ResultsTableViewController.swift */; };
+		E94B59301DD79EBB0016A71C /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B592F1DD79EBB0016A71C /* HomeModel.swift */; };
+		E94B59321DD79ECF0016A71C /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B59311DD79ECF0016A71C /* PetModel.swift */; };
 		E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */; };
 		E9AF39501DCD284400745D0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394F1DCD284400745D0C /* Constants.swift */; };
 		E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */; };
@@ -45,6 +48,9 @@
 		E92B8D311DC7FB3600EC117B /* Animal_Shelter_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal_Shelter_AppTests.swift; sourceTree = "<group>"; };
 		E92B8D331DC7FB3600EC117B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E92B8D3C1DC835B300EC117B /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E94B592B1DD79CAF0016A71C /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		E94B592F1DD79EBB0016A71C /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		E94B59311DD79ECF0016A71C /* PetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		E9AF394F1DCD284400745D0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPickTableViewController.swift; path = ../SearchPickTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 				E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */,
 				E92B8D3C1DC835B300EC117B /* SearchViewController.swift */,
 				E9AF39571DD160D500745D0C /* AboutUsViewController.swift */,
+				E94B592B1DD79CAF0016A71C /* ResultsTableViewController.swift */,
+				E94B592F1DD79EBB0016A71C /* HomeModel.swift */,
+				E94B59311DD79ECF0016A71C /* PetModel.swift */,
 			);
 			path = "Animal Shelter App";
 			sourceTree = "<group>";
@@ -222,13 +231,16 @@
 			files = (
 				E9AF39561DCD301D00745D0C /* searchItemTableViewCell.swift in Sources */,
 				E9AF39581DD160D500745D0C /* AboutUsViewController.swift in Sources */,
+				E94B59301DD79EBB0016A71C /* HomeModel.swift in Sources */,
 				E92B8D1C1DC7FB3600EC117B /* ViewController.swift in Sources */,
 				E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */,
+				E94B592C1DD79CAF0016A71C /* ResultsTableViewController.swift in Sources */,
 				E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */,
 				E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */,
 				E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */,
 				E92B8D221DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld in Sources */,
 				E9AF39501DCD284400745D0C /* Constants.swift in Sources */,
+				E94B59321DD79ECF0016A71C /* PetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
