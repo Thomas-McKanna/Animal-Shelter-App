@@ -10,6 +10,10 @@
 // Color notes: For cats, there are eight main colors: red (sometimes known as orange), black, chocolate (dark brown), cinnamon (light brown), cream (also referred to as buff or tan), blue (grey), lilac (lavender), and fawn.
 let COLORS = ["Any Color", "Black", "Brown", "White", "Golden", "Mixed"]
 
+let CAT_HAIR_STYLES = ["Short", "Medium", "Long"]
+
+let DOG_SIZES = ["Small (25 lb or less)", "Med. (26-60 lb)", "Large (61-100 lb)", "X-Large (101 lb or more)"]
+
 // TODO: make complete list (http://cattime.com/cat-breeds)
 let CAT_BREEDS = ["Any Breed", "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Wirehair", "Balinese", "Bengal Cats", "Birman", "Bombay", "British Shorthair", "Burmese", "Burmilla", "Chartreux", "Chinese Li Hua", "Colorpoint Shorthair", "Cornish Rex", "Cymric", "Devon Rex", "Egyptian Mau", "European Burmese", "Exotic", "Havana Brown", "Himalayan", "Japanese Bobtail", "Javanese", "Korat", "LaPerm", "Maine Coon", "Manx", "Nebelung", "Norwegian Forest", "Ocicat", "Oriental", "Persian", "Ragamuffin", "Ragdoll Cats", "Russian Blue", "Savannah", "Scottish Fold", "Selkrirk Rex", "Siamese Cat", "Siberian", "Singapura", "Snowshoe", "Somali", "Sphynx", "Tonkinese", "Turkish Angora", "Turkish Van"]
 

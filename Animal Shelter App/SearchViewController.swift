@@ -16,13 +16,14 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var maleFemaleEitherLabel: UILabel!
     @IBOutlet weak var maxAgeLabel: UILabel!
-    @IBOutlet weak var specialNeedsLabel: UILabel!
     @IBOutlet weak var DogCatEitherSgmtCtrl: UISegmentedControl!
     @IBOutlet weak var breedTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var colorTextField: UITextField!
     @IBOutlet weak var maleFemaleEitherSgmtCtrl: UISegmentedControl!
-    @IBOutlet weak var specialNeedsSwitch: UITextField!
+    @IBOutlet weak var sizeOrHairLabel: UILabel!
+    @IBOutlet weak var sizeOrHairTextField: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -61,6 +62,20 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
             vc.delegateIdentifier = "color"
             vc.delegate = self
         }
+        
+        if segue.identifier == "sizeOrHair" {
+            let vc = segue.destination as! SearchPickTableViewController
+            vc.delegateIdentifier = "sizeOrHair"
+            vc.delegate = self
+            // if "Dog is selected in the segment control
+            if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+                vc.listOfThings = DOG_SIZES
+            }
+            // if "Cat" is selected in the segment control
+            else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+                vc.listOfThings = CAT_HAIR_STYLES
+            }
+        }
     }
     
     func finishedPicking(controller: SearchPickTableViewController, text: String, id: String) {
@@ -74,6 +89,10 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
         
         if id == "color" {
             colorTextField.text = text
+        }
+        
+        if id == "sizeOrHair" {
+            sizeOrHairTextField.text = text
         }
         
         controller.navigationController?.popViewController(animated: true)
@@ -98,5 +117,22 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
     @IBAction func colorSegue(_ sender: UITextField) {
         performSegue(withIdentifier: "color", sender: self)
     }
+    @IBAction func sizeOrHairSegue(_ sender: UITextField) {
+        performSegue(withIdentifier: "sizeOrHair", sender: self)
+    }
+    @IBAction func dogCatEitherChanged(_ sender: UISegmentedControl) {
+        if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+            sizeOrHairLabel.text = "Size:"
+            sizeOrHairTextField.text = ""
+            sizeOrHairTextField.placeholder = "Any Size"
+        }
+        else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+            sizeOrHairLabel.text = "Hair:"
+            sizeOrHairTextField.text = ""
+            sizeOrHairTextField.placeholder = "Any Hair Type"
+        }
+    }
+    
+    
     
 }
