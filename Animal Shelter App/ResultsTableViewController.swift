@@ -26,6 +26,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         
         let homeModel = HomeModel()
         homeModel.delegate = self
+        homeModel.urlPath += determineQueryString()
         homeModel.downloadItems()
         
         // Uncomment the following line to preserve selection between presentations
@@ -82,6 +83,82 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         
         
         return cell
+    }
+    
+    func determineQueryString() -> String {
+        
+        // TODO: determine if certain fields need to be condensed to be matched with database entries
+        
+        var queryString: String = "?"
+        var queryAdded: Bool = false
+        
+        // check if sex is specified
+        if searchModel!.sex != nil {
+            queryString += "sex=\(searchModel!.sex!)"
+            queryAdded = true
+        }
+        
+        // check if pet type is specified
+        
+        if searchModel!.petType != nil {
+            // will add '&' to query string if necessary
+            queryString += addAmpersand(queryAdded: queryAdded)
+            queryString += "pet_type=\(searchModel!.petType!)"
+            queryAdded = true
+            
+            // check if there is a breed specified
+            if searchModel!.breed != nil {
+                queryString += addAmpersand(queryAdded: queryAdded)
+                queryString += "breed=\(searchModel!.breed!)"
+                queryAdded = true
+            }
+            
+            // check if there is a color specified
+            if searchModel!.color != nil {
+                queryString += addAmpersand(queryAdded: queryAdded)
+                queryString += "color=\(searchModel!.color!)"
+                queryAdded = true
+            }
+            
+            // check if there is an age specified
+            if searchModel!.age != nil {
+                queryString += addAmpersand(queryAdded: queryAdded)
+                queryString += "age=\(searchModel!.age!)"
+                queryAdded = true
+            }
+            
+            // check if there is an pet-specific attribute specified
+            if searchModel!.petSpecificAttribute != nil {
+                if searchModel!.petType == "D" {
+                    queryString += addAmpersand(queryAdded: queryAdded)
+                    queryString += "size=\(searchModel!.petSpecificAttribute!)"
+                }
+                else if searchModel!.petType == "C" {
+                    queryString += addAmpersand(queryAdded: queryAdded)
+                    queryString += "hair=\(searchModel!.petSpecificAttribute!)"
+                }
+            }
+        }
+        else {
+            // do nothing - the query string is ready to be returned
+        }
+        
+        if queryString != "?" {
+            return queryString
+        }
+        else {
+            // the user wants to see all pets in the database; no need for a query string
+            return ""
+        }
+    }
+    
+    func addAmpersand(queryAdded: Bool) -> String {
+        if queryAdded == true {
+            return "&"
+        }
+        else {
+            return ""
+        }
     }
 
     /*

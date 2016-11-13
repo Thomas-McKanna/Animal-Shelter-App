@@ -19,7 +19,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
     weak var delegate: HomeModelProtocol!
     var data: Data = Data()
     // this path will have to be added to (query string) in order for the app to be fully implemented
-    let urlPath: String = "http://tjmprojects.net/test.php"
+    var urlPath: String = "http://tjmprojects.net/test.php"
     
     // starts a web session and go to the specified URL
     func downloadItems() {

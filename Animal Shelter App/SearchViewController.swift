@@ -209,7 +209,69 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
     
     func prepareForSearch() -> SearchModel {
         // TODO: implement - translate the search field data into a SearchModel
-        return SearchModel()
+        let newSearchModel = SearchModel()
+        
+        // check what kind of pet
+        // if dog...
+        if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+            newSearchModel.petType = "D"
+        }
+        // if cat...
+        else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+            newSearchModel.petType = "C"
+        }
+        // if either...
+        else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 2 {
+            newSearchModel.petType = nil
+        }
+        
+        // check what gender
+        // if male...
+        if maleFemaleEitherSgmtCtrl.selectedSegmentIndex == 0 {
+            newSearchModel.sex = "M"
+        }
+        // if female...
+        else if maleFemaleEitherSgmtCtrl.selectedSegmentIndex == 1 {
+            newSearchModel.sex = "F"
+        }
+        // if either...
+        else if maleFemaleEitherSgmtCtrl.selectedSegmentIndex == 2 {
+            newSearchModel.sex = nil
+        }
+        
+        // check what breed
+        if breedTextField.text == "" {
+            newSearchModel.breed = nil
+        }
+        else {
+            newSearchModel.breed = breedTextField.text
+        }
+        
+        // check what color
+        if colorTextField.text == "" {
+            newSearchModel.color = nil
+        }
+        else {
+            newSearchModel.color = colorTextField.text
+        }
+        
+        // check what age
+        if ageTextField.text == "" {
+            newSearchModel.age = nil
+        }
+        else {
+            newSearchModel.age = ageTextField.text
+        }
+        
+        // check pet-specific attribute
+        if sizeOrHairTextField.text == "" {
+            newSearchModel.petSpecificAttribute = nil
+        }
+        else {
+            newSearchModel.petSpecificAttribute = sizeOrHairTextField.text
+        }
+        
+        return newSearchModel
     }
     
     
