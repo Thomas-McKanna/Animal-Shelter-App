@@ -35,10 +35,10 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "breed" {
             let vc = segue.destination as! SearchPickTableViewController
+            vc.title = "Select Breed"
             // if Dog is selected
             if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
                 vc.listOfThings = DOG_BREEDS
-                vc.title = "Select Breed"
                 vc.delegateIdentifier = "breed"
                 vc.delegate = self
             }
@@ -52,16 +52,36 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
         
         if segue.identifier == "age" {
             let vc = segue.destination as! SearchPickTableViewController
-            vc.listOfThings = AGES
-            vc.delegateIdentifier = "age"
-            vc.delegate = self
+            vc.title = "Select Age"
+            // if Dog is selected
+            if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+                vc.listOfThings = DOG_AGES
+                vc.delegateIdentifier = "age"
+                vc.delegate = self
+            }
+            // if Cat is selected
+            else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+                vc.listOfThings = CAT_AGES
+                vc.delegateIdentifier = "age"
+                vc.delegate = self
+            }
         }
         
         if segue.identifier == "color" {
             let vc = segue.destination as! SearchPickTableViewController
-            vc.listOfThings = COLORS
-            vc.delegateIdentifier = "color"
-            vc.delegate = self
+            vc.title = "Select Color"
+            // if Dog is selected
+            if DogCatEitherSgmtCtrl.selectedSegmentIndex == 0 {
+                vc.listOfThings = DOG_COLORS
+                vc.delegateIdentifier = "color"
+                vc.delegate = self
+            }
+                // if Cat is selected
+            else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
+                vc.listOfThings = CAT_COLORS
+                vc.delegateIdentifier = "color"
+                vc.delegate = self
+            }
         }
         
         if segue.identifier == "sizeOrHair" {
