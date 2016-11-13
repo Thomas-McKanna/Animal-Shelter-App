@@ -20,11 +20,12 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
     @IBOutlet weak var breedTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var colorTextField: UITextField!
+    @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var maleFemaleEitherSgmtCtrl: UISegmentedControl!
     @IBOutlet weak var sizeOrHairLabel: UILabel!
     @IBOutlet weak var sizeOrHairTextField: UITextField!
     
-    
+    var inputDisabled: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,11 +126,57 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
             sizeOrHairLabel.text = "Size:"
             sizeOrHairTextField.text = ""
             sizeOrHairTextField.placeholder = "Any Size"
+            if inputDisabled == true {
+                toggleInput()
+            }
         }
         else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 1 {
             sizeOrHairLabel.text = "Hair:"
             sizeOrHairTextField.text = ""
             sizeOrHairTextField.placeholder = "Any Hair Type"
+            if inputDisabled == true {
+                toggleInput()
+            }
+        }
+        else if DogCatEitherSgmtCtrl.selectedSegmentIndex == 2 {
+            if inputDisabled == false {
+                toggleInput()
+            }
+        }
+    }
+    
+    func toggleInput() {
+        if inputDisabled == false {
+            // disable breed lbl and txtField
+            breedLabel.isEnabled = false
+            breedTextField.isEnabled = false
+            // disable color lbl and txtField
+            colorLabel.isEnabled = false
+            colorTextField.isEnabled = false
+            // disable sizeOrHair lbl and txtField
+            sizeOrHairLabel.isEnabled = false
+            sizeOrHairTextField.isEnabled = false
+            // disable age lbl and txtField
+            maxAgeLabel.isEnabled = false
+            ageTextField.isEnabled = false
+            
+            inputDisabled = true
+        }
+        else if inputDisabled == true {
+            // enable breed lbl and txtField
+            breedLabel.isEnabled = true
+            breedTextField.isEnabled = true
+            // enable color lbl and txtField
+            colorLabel.isEnabled = true
+            colorTextField.isEnabled = true
+            // enable sizeOrHair lbl and txtField
+            sizeOrHairLabel.isEnabled = true
+            sizeOrHairTextField.isEnabled = true
+            // enable age lbl and txtField
+            maxAgeLabel.isEnabled = true
+            ageTextField.isEnabled = true
+            
+            inputDisabled = false
         }
     }
     
