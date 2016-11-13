@@ -7,8 +7,17 @@
 //
 
 import Foundation
-/*
+
 class SearchModel: NSObject {
+    
+    // properties
+    var petType: String?
+    var sex: String?
+    var breed: String?
+    var color: String?
+    var age: String?
+    // either hair type (cat) or size (dog)
+    var petSpecificAttribute: String?
     
     // empty constructor
     override init() {
@@ -16,13 +25,18 @@ class SearchModel: NSObject {
     }
     
     // constructor
-    init() {
-        
+    init(petType: String, sex: String, breed: String, color: String, age: String, petSpecificAttribute: String) {
+        self.petType = petType
+        self.sex = sex
+        self.breed = breed
+        self.color = color
+        self.age = age
+        self.petSpecificAttribute = petSpecificAttribute
     }
     
     // print objects current state
     override var description: String {
-        return "ID: \(petID), Name: \(name), Type: \(petType), Breed: \(breed), Sex: \(sex), Size: \(size), Color: \(color), Age: \(age),Path to Image: \(imagePath), Info: \(info),"
+        return "Pet Type: \(petType), Sex: \(sex), Breed: \(breed), Color: \(color), Age: \(age), Pet-Specific Attribute: \(petSpecificAttribute)"
     }
 }
- */
+

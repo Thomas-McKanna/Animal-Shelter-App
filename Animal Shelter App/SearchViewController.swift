@@ -97,6 +97,13 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
                 vc.listOfThings = CAT_HAIR_STYLES
             }
         }
+        
+        if segue.identifier == "search" {
+            // TODO: prepare for segue when user taps search button
+            let vc = segue.destination as! ResultsTableViewController
+            let search: SearchModel = prepareForSearch()
+            vc.searchModel = search
+        }
     }
     
     func finishedPicking(controller: SearchPickTableViewController, text: String, id: String) {
@@ -198,6 +205,11 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
             
             inputDisabled = false
         }
+    }
+    
+    func prepareForSearch() -> SearchModel {
+        // TODO: implement - translate the search field data into a SearchModel
+        return SearchModel()
     }
     
     

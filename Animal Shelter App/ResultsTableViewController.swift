@@ -13,6 +13,8 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
     // properties
     var feedItems: NSArray = NSArray()
     var selectedPet: PetModel = PetModel()
+    // to be assigned before segue
+    var searchModel: SearchModel?
     @IBOutlet weak var listTableView: UITableView!
     
     override func viewDidLoad() {

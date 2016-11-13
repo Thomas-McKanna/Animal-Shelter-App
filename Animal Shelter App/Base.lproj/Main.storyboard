@@ -222,7 +222,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="2o7-id-g5X" eventType="touchUpInside" id="C1d-Rz-yR6"/>
-                                    <segue destination="Kh4-6B-GUG" kind="show" id="Bdw-AI-7x3"/>
+                                    <segue destination="Kh4-6B-GUG" kind="show" identifier="search" id="Bdw-AI-7x3"/>
                                 </connections>
                             </button>
                         </subviews>
