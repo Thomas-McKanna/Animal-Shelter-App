@@ -6,6 +6,8 @@
 //  Copyright © 2016 ISYS 220. All rights reserved.
 //
 
+import Foundation
+
 // TODO: make complete list (http://www.adoptapet.com/adoption_rescue/74766.html)
 let CAT_COLORS = ["Any Color", "Black", "White"]
 
@@ -20,10 +22,13 @@ let CAT_HAIR_STYLES = ["Short", "Medium", "Long"]
 
 let DOG_SIZES = ["Small (25 lb or less)", "Med. (26-60 lb)", "Large (61-100 lb)", "X-Large (101 lb or more)"]
 
-// TODO: make complete list (http://www.adoptapet.com/adoption_rescue/74766.html)
-let CAT_BREEDS = ["Any Breed", "Abyssinian", "American Bobtail", "American Curl", "American Shorthair", "American Wirehair", "Balinese", "Bengal Cats", "Birman", "Bombay", "British Shorthair", "Burmese", "Burmilla", "Chartreux", "Chinese Li Hua", "Colorpoint Shorthair", "Cornish Rex", "Cymric", "Devon Rex", "Egyptian Mau", "European Burmese", "Exotic", "Havana Brown", "Himalayan", "Japanese Bobtail", "Javanese", "Korat", "LaPerm", "Maine Coon", "Manx", "Nebelung", "Norwegian Forest", "Ocicat", "Oriental", "Persian", "Ragamuffin", "Ragdoll Cats", "Russian Blue", "Savannah", "Scottish Fold", "Selkrirk Rex", "Siamese Cat", "Siberian", "Singapura", "Snowshoe", "Somali", "Sphynx", "Tonkinese", "Turkish Angora", "Turkish Van"]
+// stores ["breed_name"] => "breed_id"
+var BREED_TO_ID: Dictionary = Dictionary<String, String>()
 
-// TODO: make complete list (http://www.adoptapet.com/adoption_rescue/74766.html)
-let DOG_BREEDS = ["Any Breed", "Retriever (Labrador)", "German Sheperd", "Retriever (Golden)", "Bulldog", "Beagle", "French Bulldog", "Yorkshire Terrier"]
+// TODO: add "Any Breed" funcationality
+var CAT_BREEDS: [String] = Array<String>()
+
+// TODO: add "Any Breed" funcationality
+var DOG_BREEDS: [String] = Array<String>()
 
 

@@ -18,8 +18,8 @@ class HomeModel: NSObject, URLSessionDataDelegate {
     //properties
     weak var delegate: HomeModelProtocol!
     var data: Data = Data()
-    // this path will have to be added to (query string) in order for the app to be fully implemented
-    var urlPath: String = "http://tjmprojects.net/test.php"
+    // query string is added to this URL later
+    var urlPath: String = "http://tjmprojects.net/pets.php"
     
     // starts a web session and go to the specified URL
     func downloadItems() {
@@ -71,12 +71,14 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             let pet = PetModel()
             
             // I was only able to get the JSON items to be converted to strings; integer conversion is done later on
+            // TODO: this list will need to be updated to include new fields/field names
             guard let id = jsonElement["id"] as? String,
                 let name = jsonElement["name"] as? String,
                 let petType = jsonElement["pet_type"] as? String,
-                let breed = jsonElement["breed"] as? String,
+                let breed = jsonElement["breed_id"] as? String,
                 let sex = jsonElement["sex"] as? String,
                 let size = jsonElement["size"] as? String,
+                let hair = jsonElement["hair"] as? String,
                 let age = jsonElement["age"] as? String,
                 let color = jsonElement["color"] as? String,
                 let imagePath = jsonElement["image_path"] as? String,
@@ -91,9 +93,10 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             pet.petType = petType
             pet.breed = breed
             pet.sex = sex
-            pet.size = Int(size)
+            pet.size = size
+            pet.hair = hair
             pet.color = color
-            pet.age = Int(age)
+            pet.age = age
             pet.imagePath = imagePath
             pet.info = info
             

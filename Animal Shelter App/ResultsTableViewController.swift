@@ -106,10 +106,11 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
             queryString += "pet_type=\(searchModel!.petType!)"
             queryAdded = true
             
+            // TODO: string value of breed must be converted into an integet value
             // check if there is a breed specified
             if searchModel!.breed != nil {
                 queryString += addAmpersand(queryAdded: queryAdded)
-                queryString += "breed=\(searchModel!.breed!)"
+                queryString += "breed_id=\(searchModel!.breed!)"
                 queryAdded = true
             }
             

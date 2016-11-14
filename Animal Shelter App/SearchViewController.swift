@@ -244,7 +244,7 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
             newSearchModel.breed = nil
         }
         else {
-            newSearchModel.breed = breedTextField.text
+            newSearchModel.breed = breedToID(breed: breedTextField.text!)
         }
         
         // check what color
@@ -272,6 +272,11 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
         }
         
         return newSearchModel
+    }
+    
+    // given a breed name, returns the breed_id
+    func breedToID(breed: String) -> String {
+        return BREED_TO_ID["\(breed)"]!
     }
     
     
