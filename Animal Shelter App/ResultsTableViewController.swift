@@ -12,7 +12,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
 
     // properties
     var feedItems: NSArray = NSArray()
-    var selectedPet: PetModel = PetModel()
+    var selectedPet: PetModel?
     // to be assigned before segue
     var searchModel: SearchModel?
     @IBOutlet weak var listTableView: UITableView!
@@ -35,6 +35,8 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    
     
     // sex is stored as a single character in the database; this function simply maps that character to a full string
     func determine(gender: String) -> String {
@@ -84,6 +86,24 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         
         return cell
     }
+    
+    
+    // when a pet is selected, set that pet as the selectedPet and initiate a segue
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPet = feedItems[indexPath.row] as? PetModel
+        performSegue(withIdentifier: "petSegue", sender: self)
+    }
+ 
+ 
+    
+    // before a segue takes place, the pet profile that will be used to build the view is set
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "petSegue" {
+            let petProfile = segue.destination as! ProfileViewController
+            petProfile.pet = self.selectedPet!
+        }
+    }
+ 
     
     func determineQueryString() -> String {
         
@@ -162,6 +182,8 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         }
     }
 
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

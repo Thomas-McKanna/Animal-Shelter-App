@@ -10,7 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    // TODO: Fill in information using the variable pet
+    
     // properties
+    var pet = PetModel()
+    
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBreed: UILabel!
     @IBOutlet weak var lblSize: UILabel!
