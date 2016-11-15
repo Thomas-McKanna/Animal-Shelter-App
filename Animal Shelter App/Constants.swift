@@ -22,6 +22,8 @@ let CAT_HAIR_STYLES = ["Short", "Medium", "Long"]
 
 let DOG_SIZES = ["Small (25 lb or less)", "Med. (26-60 lb)", "Large (61-100 lb)", "X-Large (101 lb or more)"]
 
+// THIS IS A CHANGE
+
 // stores ["breed_name"] => "breed_id"
 var BREED_TO_ID: Dictionary = Dictionary<String, String>()
 
