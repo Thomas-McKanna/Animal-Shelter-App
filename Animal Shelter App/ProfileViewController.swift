@@ -17,18 +17,36 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBreed: UILabel!
-    @IBOutlet weak var lblSize: UILabel!
     @IBOutlet weak var lblColor: UILabel!
+    @IBOutlet weak var lblPetSpecific: UILabel!
     @IBOutlet weak var lblAge: UILabel!
     @IBOutlet weak var lblSex: UILabel!
     @IBOutlet weak var lblID: UILabel!
     @IBOutlet weak var btnFavoriteImage: UIButton!
     @IBOutlet weak var imgPhoto: UIImageView!
     
+    @IBOutlet weak var lblPetSpecificField: UILabel!
+    @IBOutlet weak var txtboxAddInfo: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        // do pet specific work first (hair or size)
+        if pet.petType == "D" {
+            lblPetSpecificField.text = "Size"
+            lblPetSpecific.text = pet.size
+        }
+        else if pet.petType == "C" {
+            lblPetSpecificField.text = "Hair"
+            lblPetSpecific.text = pet.hair
+        }
+        lblName.text = pet.name
+        lblBreed.text = pet.breed
+        lblSex.text = pet.sex
+        lblColor.text = pet.color
+        lblAge.text = pet.age
+        lblID.text = String(describing: pet.petID!)
+        txtboxAddInfo.text = pet.info
     }
 
     override func didReceiveMemoryWarning() {
