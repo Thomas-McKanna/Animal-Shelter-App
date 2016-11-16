@@ -47,7 +47,8 @@ class ProfileViewController: UIViewController {
         lblAge.text = pet.age
         lblID.text = String(describing: pet.petID!)
         txtboxAddInfo.text = pet.info
-
+        
+        loadHeart()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,23 +63,19 @@ class ProfileViewController: UIViewController {
     
     // actions
     @IBAction func btnFavorite(_ sender: UIButton) {
-        
-        // create the context of our data model so that we can alter it
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
         if btnFavoriteImage.image(for: .normal) == #imageLiteral(resourceName: "Empty Heart") {
             // toggle the heart on
             btnFavoriteImage.setImage(#imageLiteral(resourceName: "Filled Heart"), for: .normal)
-            // make a new favorite pet entity
             
-            let newFavPet = Pet(context: context)
-            newFavPet.pet_id = Int32(pet.petID!)
-            
-            // save the new favorite pet
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            // save the pet in favorites
+            savePet()
         }
         else if btnFavoriteImage.image(for: .normal) == #imageLiteral(resourceName: "Filled Heart") {
+            // toggle the herat off
             btnFavoriteImage.setImage(#imageLiteral(resourceName: "Empty Heart"), for: .normal)
+            
+            // delete the pet in fovorites
+            deletePet()
         }
         else {
             btnFavoriteImage.setImage(#imageLiteral(resourceName: "Empty Heart"), for: .normal)
@@ -88,7 +85,62 @@ class ProfileViewController: UIViewController {
         performSegue(withIdentifier: "message", sender: self)
     }
     
+    // loads data from Pet CoreData model, and searches through to see if the petID for this pet is the same as any of the "favorited" pet's IDs. If so, the "favorite" heart is filled in; else, it is not
+    func loadHeart() {
+        var pets: [Pet] = []
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            pets = try context.fetch(Pet.fetchRequest())
+        }
+        catch {
+            print("loadHeart(): fetch request failed")
+        }
+        
+        var isFound: Bool = false
+        for pet in pets {
+            if pet.pet_id == Int32(self.pet.petID!) {
+                isFound = true
+            }
+        }
+        
+        if isFound == true {
+            btnFavoriteImage.setImage(#imageLiteral(resourceName: "Filled Heart"), for: .normal)
+        }
+        else {
+            btnFavoriteImage.setImage(#imageLiteral(resourceName: "Empty Heart"), for: .normal)
+        }
+    }
     
+    func savePet() {
+        // create the context of our data model so that we can alter it
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        // make a new favorite pet entity
+        let newFavPet = Pet(context: context)
+        newFavPet.pet_id = Int32(pet.petID!)
+        
+        // save the new favorite pet
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+    }
+    
+    func deletePet() {
+        var pets: [Pet] = []
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            pets = try context.fetch(Pet.fetchRequest())
+        }
+        catch {
+            print("deletePet(): fetch request failed")
+        }
+        
+        for pet in pets {
+            if pet.pet_id == Int32(self.pet.petID!) {
+                context.delete(pet)
+            }
+        }
+    }
     
     
     
