@@ -75,12 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
-    // get the CoreData managed object context - needed to work with CoreData
-    func getContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
-    }
-    
     // MARK: - Core Data Saving support
 
     func saveContext () {

@@ -47,6 +47,7 @@ class ProfileViewController: UIViewController {
         lblAge.text = pet.age
         lblID.text = String(describing: pet.petID!)
         txtboxAddInfo.text = pet.info
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,8 +62,20 @@ class ProfileViewController: UIViewController {
     
     // actions
     @IBAction func btnFavorite(_ sender: UIButton) {
+        
+        // create the context of our data model so that we can alter it
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         if btnFavoriteImage.image(for: .normal) == #imageLiteral(resourceName: "Empty Heart") {
+            // toggle the heart on
             btnFavoriteImage.setImage(#imageLiteral(resourceName: "Filled Heart"), for: .normal)
+            // make a new favorite pet entity
+            
+            let newFavPet = Pet(context: context)
+            newFavPet.pet_id = Int32(pet.petID!)
+            
+            // save the new favorite pet
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
         else if btnFavoriteImage.image(for: .normal) == #imageLiteral(resourceName: "Filled Heart") {
             btnFavoriteImage.setImage(#imageLiteral(resourceName: "Empty Heart"), for: .normal)
@@ -74,6 +87,8 @@ class ProfileViewController: UIViewController {
     @IBAction func btnAsk(_ sender: UIButton) {
         performSegue(withIdentifier: "message", sender: self)
     }
+    
+    
     
     
     
