@@ -54,6 +54,11 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let messageView = segue.destination as! MessageViewController
+        messageView.pet = self.pet
+    }
+    
     // actions
     @IBAction func btnFavorite(_ sender: UIButton) {
         if btnFavoriteImage.image(for: .normal) == #imageLiteral(resourceName: "Empty Heart") {
@@ -67,6 +72,7 @@ class ProfileViewController: UIViewController {
         }
     }
     @IBAction func btnAsk(_ sender: UIButton) {
+        performSegue(withIdentifier: "message", sender: self)
     }
     
     

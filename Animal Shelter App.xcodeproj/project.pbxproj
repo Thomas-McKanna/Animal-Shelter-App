@@ -21,6 +21,7 @@
 		E94B59341DD80CE80016A71C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B59331DD80CE80016A71C /* ProfileViewController.swift */; };
 		E94B59361DD8CC0B0016A71C /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B59351DD8CC0A0016A71C /* SearchModel.swift */; };
 		E94B59381DD952470016A71C /* ConstantsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B59371DD952470016A71C /* ConstantsLoader.swift */; };
+		E94B593A1DDBD3DA0016A71C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B59391DDBD3DA0016A71C /* MessageViewController.swift */; };
 		E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */; };
 		E9AF39501DCD284400745D0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF394F1DCD284400745D0C /* Constants.swift */; };
 		E9AF39541DCD2CE100745D0C /* SearchPickTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */; };
@@ -57,6 +58,7 @@
 		E94B59331DD80CE80016A71C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E94B59351DD8CC0A0016A71C /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		E94B59371DD952470016A71C /* ConstantsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsLoader.swift; sourceTree = "<group>"; };
+		E94B59391DDBD3DA0016A71C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		E9AF394D1DCA7AF100745D0C /* PetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetTableViewCell.swift; sourceTree = "<group>"; };
 		E9AF394F1DCD284400745D0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9AF39531DCD2CE100745D0C /* SearchPickTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPickTableViewController.swift; path = ../SearchPickTableViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E92B8D191DC7FB3600EC117B /* AppDelegate.swift */,
 				E92B8D1B1DC7FB3600EC117B /* ViewController.swift */,
 				E92B8D1D1DC7FB3600EC117B /* Main.storyboard */,
+				E94B59391DDBD3DA0016A71C /* MessageViewController.swift */,
 				E9AF39551DCD301D00745D0C /* searchItemTableViewCell.swift */,
 				E9AF394F1DCD284400745D0C /* Constants.swift */,
 				E92B8D231DC7FB3600EC117B /* Assets.xcassets */,
@@ -248,6 +251,7 @@
 				E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */,
 				E92B8D3D1DC835B300EC117B /* SearchViewController.swift in Sources */,
 				E9AF394E1DCA7AF100745D0C /* PetTableViewCell.swift in Sources */,
+				E94B593A1DDBD3DA0016A71C /* MessageViewController.swift in Sources */,
 				E92B8D221DC7FB3600EC117B /* Animal_Shelter_App.xcdatamodeld in Sources */,
 				E94B59341DD80CE80016A71C /* ProfileViewController.swift in Sources */,
 				E94B59361DD8CC0B0016A71C /* SearchModel.swift in Sources */,
