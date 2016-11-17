@@ -81,6 +81,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         cell.lblName.text = item.name
         cell.lblSex.text = determine(gender: item.sex!)
         cell.lblBreed.text = item.breed
+        
         // TODO: picture needs to be added somehow
         
         

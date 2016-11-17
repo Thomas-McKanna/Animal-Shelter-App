@@ -119,6 +119,16 @@ class ProfileViewController: UIViewController {
         // make a new favorite pet entity
         let newFavPet = Pet(context: context)
         newFavPet.pet_id = Int32(pet.petID!)
+        newFavPet.pet_type = pet.petType
+        newFavPet.name = pet.name
+        newFavPet.sex = pet.sex
+        newFavPet.breed = pet.breed
+        newFavPet.age = pet.age
+        newFavPet.size = pet.size
+        newFavPet.hair = pet.hair
+        newFavPet.info = pet.info
+        newFavPet.color = pet.color
+        newFavPet.path_to_image = pet.imagePath
         
         // save the new favorite pet
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
@@ -140,6 +150,9 @@ class ProfileViewController: UIViewController {
                 context.delete(pet)
             }
         }
+        
+        // save the context NOT WORKING
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     
