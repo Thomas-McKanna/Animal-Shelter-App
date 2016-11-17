@@ -273,12 +273,4 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
         
         return newSearchModel
     }
-    
-    // given a breed name, returns the breed_id
-    func breedToID(breed: String) -> String {
-        return BREED_TO_ID["\(breed)"]!
-    }
-    
-    
-    
 }

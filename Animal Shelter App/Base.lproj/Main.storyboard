@@ -685,6 +685,7 @@
                         <outlet property="lblPetSpecific" destination="zZd-kF-l2q" id="PS7-C9-YJn"/>
                         <outlet property="lblPetSpecificField" destination="KSF-Kz-MXW" id="KEK-Oz-GcL"/>
                         <outlet property="lblSex" destination="WJB-lU-dwy" id="UVi-22-kPS"/>
+                        <outlet property="navItem" destination="7eP-D5-eA5" id="a2n-Ki-683"/>
                         <outlet property="txtboxAddInfo" destination="fVg-oX-GxH" id="7AM-g1-U6r"/>
                         <segue destination="LMz-x3-dKe" kind="show" identifier="message" id="cEb-VP-0pp"/>
                     </connections>
@@ -931,6 +932,7 @@
                     <navigationItem key="navigationItem" title="Favorites" id="dLe-Vu-7vF"/>
                     <connections>
                         <outlet property="listTableView" destination="MPj-0O-DLr" id="vdq-2B-FHg"/>
+                        <segue destination="NcI-gI-yX3" kind="show" identifier="favorite" id="k6d-Gj-MwK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fp7-e0-E3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -965,5 +967,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YCs-EC-64o"/>
+        <segue reference="8bY-Y6-Mzd"/>
     </inferredMetricsTieBreakers>
 </document>

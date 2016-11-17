@@ -11,7 +11,10 @@ import UIKit
 class FavoritesTableViewController: UITableViewController {
 
     // properties
+    // array of pets to be displayed
     var pets: [PetModel] = []
+    // the pet which has been selected (used for segues)
+    var selectedPet = PetModel()
     @IBOutlet var listTableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,6 +36,7 @@ class FavoritesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         loadData()
+        listTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +89,6 @@ class FavoritesTableViewController: UITableViewController {
             tempPet = PetModel()
             
             tempPet.petID = Int(pet.pet_id)
-            print("\(pet.pet_id)")
             tempPet.petType = pet.pet_type
             tempPet.sex = pet.sex
             tempPet.breed = pet.breed
@@ -98,6 +101,23 @@ class FavoritesTableViewController: UITableViewController {
             tempPet.imagePath = pet.path_to_image
             
             self.pets.append(tempPet)
+        }
+    }
+    
+    // when a pet is selected, set that pet as the selectedPet and initiate a segue
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPet = pets[indexPath.row] 
+        performSegue(withIdentifier: "favorite", sender: self)
+    }
+    
+    
+    
+    // before a segue takes place, the pet profile that will be used to build the view is set
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favorite" {
+            let petProfile = segue.destination as! ProfileViewController
+            petProfile.pet = self.selectedPet
+            petProfile.navItem.title = self.selectedPet.name
         }
     }
 

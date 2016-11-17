@@ -91,8 +91,8 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             pet.petID = Int(id)
             pet.name = name
             pet.petType = petType
-            pet.breed = breed
-            pet.sex = sex
+            pet.breed = idToBreed(id: breed)
+            pet.sex = toSex(sex: sex)
             pet.size = size
             pet.hair = hair
             pet.color = color

@@ -36,21 +36,6 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    
-    
-    // sex is stored as a single character in the database; this function simply maps that character to a full string
-    func determine(gender: String) -> String {
-        if gender == "M" {
-            return "Male"
-        }
-        else if gender == "F" {
-            return "Female"
-        }
-        else {
-            return "Unknown"
-        }
-    }
-    
     // this function must be implemented as part of the HomeModelProtocol
     func itemsDownloaded(items: NSArray) {
         feedItems = items
@@ -79,7 +64,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         // Configure the cell...
         let item: PetModel = feedItems[indexPath.row] as! PetModel
         cell.lblName.text = item.name
-        cell.lblSex.text = determine(gender: item.sex!)
+        cell.lblSex.text = item.sex
         cell.lblBreed.text = item.breed
         
         // TODO: picture needs to be added somehow
@@ -102,6 +87,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         if segue.identifier == "petSegue" {
             let petProfile = segue.destination as! ProfileViewController
             petProfile.pet = self.selectedPet!
+            petProfile.navItem.title = self.selectedPet?.name
         }
     }
  

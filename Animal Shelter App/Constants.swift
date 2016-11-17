@@ -23,15 +23,38 @@ let CAT_HAIR_STYLES = ["Short", "Medium", "Long"]
 
 let DOG_SIZES = ["Small (25 lb or less)", "Med. (26-60 lb)", "Large (61-100 lb)", "X-Large (101 lb or more)"]
 
-// THIS IS A CHANGE
-
 // stores ["breed_name"] => "breed_id"
 var BREED_TO_ID: Dictionary = Dictionary<String, String>()
+
+// inverse of BREED_TO_ID - index number represents the breed_id
+var ID_TO_BREED: [String] = Array<String>()
 
 // TODO: add "Any Breed" funcationality
 var CAT_BREEDS: [String] = Array<String>()
 
 // TODO: add "Any Breed" funcationality
 var DOG_BREEDS: [String] = Array<String>()
+
+// given a breed name, returns the breed_id
+func breedToID(breed: String) -> String {
+    return BREED_TO_ID["\(breed)"]!
+}
+
+// given a breed id, returns the breed_name
+func idToBreed(id: String) -> String {
+    return ID_TO_BREED[Int(id)!]
+}
+
+// given a string "M" or "F", returns "Male" or "Female", respectively
+func toSex(sex: String) -> String {
+    if sex == "M" {
+        return "Male"
+    }
+    else if sex  == "F" {
+        return "Female"
+    }
+    
+    return "Error in toSex()"
+}
 
 

@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
     
     // properties
     var pet = PetModel()
+    // handle on navigation item, to change name
+    @IBOutlet weak var navItem: UINavigationItem!
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblBreed: UILabel!
