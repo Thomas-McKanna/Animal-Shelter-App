@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6812D2AAF9DB8FB45F3EE8D /* Pods_Animal_Shelter_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A6D917AB8026E158B20E5A /* Pods_Animal_Shelter_App.framework */; };
 		E92B8D1A1DC7FB3600EC117B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D191DC7FB3600EC117B /* AppDelegate.swift */; };
 		E92B8D1C1DC7FB3600EC117B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92B8D1B1DC7FB3600EC117B /* ViewController.swift */; };
 		E92B8D1F1DC7FB3600EC117B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92B8D1D1DC7FB3600EC117B /* Main.storyboard */; };
@@ -42,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AB97E0CA893FF75BC7A5440 /* Pods-Animal Shelter App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animal Shelter App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Animal Shelter App/Pods-Animal Shelter App.release.xcconfig"; sourceTree = "<group>"; };
+		64A6D917AB8026E158B20E5A /* Pods_Animal_Shelter_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Animal_Shelter_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8CBC29FC72487F582E352F5 /* Pods-Animal Shelter App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animal Shelter App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Animal Shelter App/Pods-Animal Shelter App.debug.xcconfig"; sourceTree = "<group>"; };
 		E92B8D161DC7FB3600EC117B /* Animal Shelter App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animal Shelter App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92B8D191DC7FB3600EC117B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E92B8D1B1DC7FB3600EC117B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6812D2AAF9DB8FB45F3EE8D /* Pods_Animal_Shelter_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +93,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C647B5C07409163EADF339C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8CBC29FC72487F582E352F5 /* Pods-Animal Shelter App.debug.xcconfig */,
+				1AB97E0CA893FF75BC7A5440 /* Pods-Animal Shelter App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0ABB07192DCEA1BA6E12BA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64A6D917AB8026E158B20E5A /* Pods_Animal_Shelter_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E92B8D0D1DC7FB3500EC117B = {
 			isa = PBXGroup;
 			children = (
 				E92B8D181DC7FB3600EC117B /* Animal Shelter App */,
 				E92B8D301DC7FB3600EC117B /* Animal Shelter AppTests */,
 				E92B8D171DC7FB3600EC117B /* Products */,
+				C647B5C07409163EADF339C9 /* Pods */,
+				D0ABB07192DCEA1BA6E12BA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E92B8D361DC7FB3600EC117B /* Build configuration list for PBXNativeTarget "Animal Shelter App" */;
 			buildPhases = (
+				C3BCD08809DE7366F8FD42A1 /* [CP] Check Pods Manifest.lock */,
 				E92B8D121DC7FB3500EC117B /* Sources */,
 				E92B8D131DC7FB3500EC117B /* Frameworks */,
 				E92B8D141DC7FB3500EC117B /* Resources */,
+				2D149030A1FE3EC04E2D3206 /* [CP] Embed Pods Frameworks */,
+				879F4698B020872C9ACEF6B3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +268,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D149030A1FE3EC04E2D3206 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Animal Shelter App/Pods-Animal Shelter App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879F4698B020872C9ACEF6B3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Animal Shelter App/Pods-Animal Shelter App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3BCD08809DE7366F8FD42A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E92B8D121DC7FB3500EC117B /* Sources */ = {
@@ -401,6 +476,7 @@
 		};
 		E92B8D371DC7FB3600EC117B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8CBC29FC72487F582E352F5 /* Pods-Animal Shelter App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Animal Shelter App/Info.plist";
@@ -413,6 +489,7 @@
 		};
 		E92B8D381DC7FB3600EC117B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB97E0CA893FF75BC7A5440 /* Pods-Animal Shelter App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Animal Shelter App/Info.plist";

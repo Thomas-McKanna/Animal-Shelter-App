@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class MessageViewController: UIViewController {
 
     // properties
     var pet = PetModel()
-    
     @IBOutlet weak var lblMsgAbout: UILabel!
     @IBOutlet weak var txtfieldFirstName: UITextField!
     @IBOutlet weak var txtfieldLastName: UITextField!
@@ -33,6 +33,7 @@ class MessageViewController: UIViewController {
     
     // actions
     @IBAction func btnSend(_ sender: UIButton) {
+        sendMail()
     }
 
     /*
@@ -44,5 +45,29 @@ class MessageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // sends an email using the Alamofire API
+    // TODO: error checking - make sure user has entered values into the fields (possibly get an API to make sure email is valid?)
+    // TODO: add html message functionality
+    func sendMail() {
+        let key = "key-e370afda5362b7dfcb5023281c7f0db2"
+        let emailTo = "tmckanna1@live.maryville.edu"
+        
+        let parameters = [
+            "from": "message@tjmprojects.net",
+            "to": "\(emailTo)",
+            "subject": "Message about \(pet.name!)",
+            "text": "This message was generated from the Animal Shelter iOS App:\r\nEmail Address: \(txtfieldEmail.text!)\r\nName: \(txtfieldFirstName.text) \(txtfieldLastName.text!)\r\n\r\nMessage:\r\n\(txtboxMessage.text!)"
+        ]
+        
+        Alamofire.request("https://api.mailgun.net/v3/mail.tjmprojects.net/messages", method: .post, parameters:parameters)
+            .authenticate(user: "api", password: key)
+            .response { response in
+                debugPrint(response)
+                print(response.response?.statusCode)
+            }
+    }
+
 
 }
+
