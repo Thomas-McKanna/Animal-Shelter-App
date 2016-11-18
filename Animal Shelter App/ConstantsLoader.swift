@@ -12,7 +12,7 @@ class ConstantsLoader: NSObject, URLSessionDataDelegate {
 
     var data: Data = Data()
     // TODO: php file still needs to be fully implemented (other database tables similar to breed?)
-    var urlPath: String = "http://tjmprojects.net/breeds.php"
+    var urlPath: String = "http://tjmprojects.net/animal-shelter/breeds.php"
     
     // starts a web session and go to the specified URL
     func downloadItems() {
@@ -59,19 +59,21 @@ class ConstantsLoader: NSObject, URLSessionDataDelegate {
         DOG_BREEDS.append("Any Breed")
         CAT_BREEDS.append("Any Breed")
         
-        for i in 0..<jsonResult.count {
-            // a Dictionary maps keys to values, such as ["id"] => 1
-            jsonElement = jsonResult[i] as! NSDictionary
+        if jsonResult != nil {
+            for i in 0..<jsonResult.count {
+                // a Dictionary maps keys to values, such as ["id"] => 1
+                jsonElement = jsonResult[i] as! NSDictionary
+                
+                BREED_TO_ID[(jsonElement["breed_name"] as? String)!] = jsonElement["breed_id"] as? String
             
-            BREED_TO_ID[(jsonElement["breed_name"] as? String)!] = jsonElement["breed_id"] as? String
+                ID_TO_BREED.append((jsonElement["breed_name"] as? String)!)
             
-            ID_TO_BREED.append((jsonElement["breed_name"] as? String)!)
-            
-            if jsonElement["pet_type"] as? String == "D" {
-                DOG_BREEDS.append(jsonElement["breed_name"] as! String)
-            }
-            else if jsonElement["pet_type"] as? String == "C" {
-                CAT_BREEDS.append(jsonElement["breed_name"] as! String)
+                if jsonElement["pet_type"] as? String == "D" {
+                    DOG_BREEDS.append(jsonElement["breed_name"] as! String)
+                }
+                else if jsonElement["pet_type"] as? String == "C" {
+                    CAT_BREEDS.append(jsonElement["breed_name"] as! String)
+                }
             }
         }
     }

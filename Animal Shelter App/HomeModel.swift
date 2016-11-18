@@ -19,7 +19,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
     weak var delegate: HomeModelProtocol!
     var data: Data = Data()
     // query string is added to this URL later
-    var urlPath: String = "http://tjmprojects.net/pets.php"
+    var urlPath: String = "http://tjmprojects.net/animal-shelter/pets.php"
     
     // starts a web session and go to the specified URL
     func downloadItems() {
@@ -64,44 +64,45 @@ class HomeModel: NSObject, URLSessionDataDelegate {
         var jsonElement: NSDictionary = NSDictionary()
         let pets: NSMutableArray = NSMutableArray()
         
-        for i in 0..<jsonResult.count {
-            // a Dictionary maps keys to values, such as ["id"] => 1
-            jsonElement = jsonResult[i] as! NSDictionary
-            // every iteration, we make a PetModel, which will be added to an array and sent to the table view
-            let pet = PetModel()
+        if jsonResult != nil {
+            for i in 0..<jsonResult.count {
+                // a Dictionary maps keys to values, such as ["id"] => 1
+                jsonElement = jsonResult[i] as! NSDictionary
+                // every iteration, we make a PetModel, which will be added to an array and sent to the table view
+                let pet = PetModel()
             
-            // I was only able to get the JSON items to be converted to strings; integer conversion is done later on
-            // TODO: this list will need to be updated to include new fields/field names
-            guard let id = jsonElement["id"] as? String,
-                let name = jsonElement["name"] as? String,
-                let petType = jsonElement["pet_type"] as? String,
-                let breed = jsonElement["breed_id"] as? String,
-                let sex = jsonElement["sex"] as? String,
-                let size = jsonElement["size"] as? String,
-                let hair = jsonElement["hair"] as? String,
-                let age = jsonElement["age"] as? String,
-                let color = jsonElement["color"] as? String,
-                let imagePath = jsonElement["image_path"] as? String,
-                let info = jsonElement["info"] as? String else {
-                print("JSON contained invalid data")
-                return
+                // I was only able to get the JSON items to be converted to strings; integer conversion is done later on
+                guard let id = jsonElement["id"] as? String,
+                    let name = jsonElement["name"] as? String,
+                    let petType = jsonElement["pet_type"] as? String,
+                    let breed = jsonElement["breed_id"] as? String,
+                    let sex = jsonElement["sex"] as? String,
+                    let size = jsonElement["size"] as? String,
+                    let hair = jsonElement["hair"] as? String,
+                    let age = jsonElement["age"] as? String,
+                    let color = jsonElement["color"] as? String,
+                    let imagePath = jsonElement["image_path"] as? String,
+                    let info = jsonElement["info"] as? String else {
+                    print("JSON contained invalid data")
+                    return
+                }
+            
+                // pet object fields are filled in; conversions to Integer happen where appropriate
+                pet.petID = Int(id)
+                pet.name = name
+                pet.petType = petType
+                pet.breed = idToBreed(id: breed)
+                pet.sex = toSex(sex: sex)
+                pet.size = size
+                pet.hair = hair
+                pet.color = color
+                pet.age = age
+                pet.imagePath = imagePath
+                pet.info = info
+            
+                // pet is added to array
+                pets.add(pet)
             }
-            
-            // pet object fields are filled in; conversions to Integer happen where appropriate
-            pet.petID = Int(id)
-            pet.name = name
-            pet.petType = petType
-            pet.breed = idToBreed(id: breed)
-            pet.sex = toSex(sex: sex)
-            pet.size = size
-            pet.hair = hair
-            pet.color = color
-            pet.age = age
-            pet.imagePath = imagePath
-            pet.info = info
-            
-            // pet is added to array
-            pets.add(pet)
         }
         
         // sends the pet profiles to the ResultsTableViewController

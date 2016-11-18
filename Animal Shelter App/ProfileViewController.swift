@@ -58,6 +58,11 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // need to reload heart incase user just changed it from the "favorites" tab
+        loadHeart()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let messageView = segue.destination as! MessageViewController
         messageView.pet = self.pet
