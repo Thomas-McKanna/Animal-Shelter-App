@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class ResultsTableViewController: UITableViewController, HomeModelProtocol {
 
@@ -69,6 +71,15 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         
         // TODO: picture needs to be added somehow
         
+        // set cell border
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 1.0
+        
+        cell.imgPet.contentMode = .scaleAspectFit
+        
+        let urlString = "http://tjmprojects.net/animal-shelter/img/pet" + String(describing: item.petID!) + ".jpg"
+        let downloadURL = NSURL(string: urlString)!
+        cell.imgPet.af_setImage(withURL: downloadURL as URL)
         
         return cell
     }
@@ -169,6 +180,7 @@ class ResultsTableViewController: UITableViewController, HomeModelProtocol {
         }
     }
 
+    
     
     
     /*

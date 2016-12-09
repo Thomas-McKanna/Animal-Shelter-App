@@ -33,7 +33,20 @@ class MessageViewController: UIViewController {
     
     // actions
     @IBAction func btnSend(_ sender: UIButton) {
-        sendMail()
+        // create the alert
+        var alert: UIAlertController
+        
+        if txtfieldFirstName.text == "" || txtfieldLastName.text == "" || txtfieldEmail.text == "" || txtboxMessage.text == "" {
+            // make the alert
+            alert = UIAlertController(title: "Something is Missing!", message: "Make sure all fields have been filled in.", preferredStyle: UIAlertControllerStyle.alert)
+            // set an "OK" button
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            sendMail()
+        }
     }
 
     /*
@@ -57,7 +70,7 @@ class MessageViewController: UIViewController {
             "from": "message@tjmprojects.net",
             "to": "\(emailTo)",
             "subject": "Message about \(pet.name!)",
-            "text": "This message was generated from the Animal Shelter iOS App:\r\nEmail Address: \(txtfieldEmail.text!)\r\nName: \(txtfieldFirstName.text) \(txtfieldLastName.text!)\r\n\r\nMessage:\r\n\(txtboxMessage.text!)"
+            "text": "This message was generated from the Animal Shelter iOS App:\r\nEmail Address: \(txtfieldEmail.text!)\r\nName: \(txtfieldFirstName.text!) \(txtfieldLastName.text!)\r\n\r\nMessage:\r\n\(txtboxMessage.text!)"
         ]
         
         Alamofire.request("https://api.mailgun.net/v3/mail.tjmprojects.net/messages", method: .post, parameters:parameters)

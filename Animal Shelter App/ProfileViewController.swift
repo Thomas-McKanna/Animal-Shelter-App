@@ -50,6 +50,14 @@ class ProfileViewController: UIViewController {
         lblID.text = String(describing: pet.petID!)
         txtboxAddInfo.text = pet.info
         
+        // set image resolution
+        imgPhoto.contentMode = .scaleAspectFit
+        
+        // set image
+        let urlString = "http://tjmprojects.net/animal-shelter/img/pet" + String(describing: pet.petID!) + ".jpg"
+        let downloadURL = NSURL(string: urlString)!
+        imgPhoto.af_setImage(withURL: downloadURL as URL)
+        
         loadHeart()
     }
 

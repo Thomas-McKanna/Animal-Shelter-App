@@ -64,7 +64,12 @@ class FavoritesTableViewController: UITableViewController {
         cell.lblSex.text = pets[indexPath.row].sex!
         cell.lblBreed.text = pets[indexPath.row].breed!
         
-        // TODO: set the picture (will require request to database)
+        // set the image
+        cell.imgviewPhoto.contentMode = .scaleAspectFit
+        
+        let urlString = "http://tjmprojects.net/animal-shelter/img/pet" + String(describing: pets[indexPath.row].petID!) + ".jpg"
+        let downloadURL = NSURL(string: urlString)!
+        cell.imgviewPhoto.af_setImage(withURL: downloadURL as URL)
 
         return cell
     }

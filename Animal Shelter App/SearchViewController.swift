@@ -99,11 +99,37 @@ class SearchViewController: UIViewController, SearchPickTableViewControllerDeleg
         }
         
         if segue.identifier == "search" {
-            // TODO: prepare for segue when user taps search button
+
+            
+            // if the breeds are unsuccessfully loaded in, a runtime error will occur, crashing the app; so, we must check to see if breed list has been populated. If not, try to populate it again
+
+            
             let vc = segue.destination as! ResultsTableViewController
             let search: SearchModel = prepareForSearch()
             vc.searchModel = search
         }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "search"{
+            if BREED_TO_ID.isEmpty {
+                var alert: UIAlertController
+                // make the alert
+                alert = UIAlertController(title: "An Error Occured", message: "Data failed to download. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                // set an "OK" button
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+                
+                // attempt to redownload items from internet
+                let constants = ConstantsLoader()
+                constants.downloadItems()
+                
+                return false
+            }
+        }
+        
+        return true
     }
     
     func finishedPicking(controller: SearchPickTableViewController, text: String, id: String) {
